@@ -8,7 +8,7 @@ function Riddle({ question, correctAnswer, audioSrc }) {
   
     const checkAnswer = () => {
       if (userAnswer.trim().toLowerCase() === correctAnswer) {
-        navigate(`/audio/${audioSrc}`); s
+        navigate(`/audio/${audioSrc}`);
       } else {
         alert('Try again!');
       }
