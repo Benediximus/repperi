@@ -1,5 +1,5 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Sedgwick Ave Display', cursive;
   background-color: #f3f4f6;
   color: #333;
   height: 100vh;
@@ -7,6 +7,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+head {
+  font-family: 'Sedgwick Ave Display', cursive;
 }
 
 .App {
@@ -20,7 +24,7 @@ body {
 }
 
 button {
-  background-color: #007BFF;
+  background-color: black;
   color: white;
   border: none;
   padding: 10px 15px;
