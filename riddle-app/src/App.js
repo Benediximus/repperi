@@ -6,7 +6,7 @@ function App() {
   // Single riddle properties
   const question = "The More That Is Here, The Less You Will See";
   const answer = 'darkness';
-  const audioSrc = '/audio/le_festin.mp3';
+  const audioSrc = `${process.env.PUBLIC_URL}/audio/le_festin.mp3`;
 
   return (
     <div className="App">
