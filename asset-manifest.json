@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/repperi/static/css/main.e45f705d.css",
-    "main.js": "/repperi/static/js/main.061d139a.js",
+    "main.js": "/repperi/static/js/main.9126c578.js",
     "static/js/787.8afd0638.chunk.js": "/repperi/static/js/787.8afd0638.chunk.js",
     "index.html": "/repperi/index.html",
     "main.e45f705d.css.map": "/repperi/static/css/main.e45f705d.css.map",
-    "main.061d139a.js.map": "/repperi/static/js/main.061d139a.js.map",
+    "main.9126c578.js.map": "/repperi/static/js/main.9126c578.js.map",
     "787.8afd0638.chunk.js.map": "/repperi/static/js/787.8afd0638.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e45f705d.css",
-    "static/js/main.061d139a.js"
+    "static/js/main.9126c578.js"
   ]
 }
