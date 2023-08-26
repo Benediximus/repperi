@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
-import { useParams } from 'react-router-dom';
 import './AudioPlayer.css';
 
-function AudioPlayer() {
-  const { audioSrc } = useParams(); // get the audioSrc parameter from the URL
-
+function AudioPlayer({ audioSrc }) { // Changed to receive audioSrc as a prop
   return (
     <div>
       <h2>Correct! Listen to this:</h2>
@@ -13,7 +10,7 @@ function AudioPlayer() {
         src={audioSrc}
         autoPlay
         controls
-        />
+      />
     </div>
   );
 }

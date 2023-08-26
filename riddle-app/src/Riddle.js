@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import AudioPlayer from './AudioPlayer';
 import './Riddle.css';
 
 function Riddle({ question, correctAnswer, audioSrc }) {
     const [userAnswer, setUserAnswer] = useState('');
     const [isValid, setIsValid] = useState(true);
-    const [shake, setShake] = useState(false);
-    const navigate = useNavigate();
-
+    const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
+  
     const handleInputChange = (e) => {
         setUserAnswer(e.target.value);
         // now whenever the user types something, the red goes away
@@ -35,29 +34,32 @@ function Riddle({ question, correctAnswer, audioSrc }) {
     /************************************************************************************************/
 
     const checkAnswer = () => {
-      if (userAnswer.trim().toLowerCase() === correctAnswer) {
-        navigate(`/audio/${audioSrc}`);
-      } else {
-        setIsValid(false);
-        setShake(true);
-        setTimeout(() => setShake(false), 500); 
-      }
+        if (userAnswer.trim().toLowerCase() === correctAnswer) {
+            setIsAnswerCorrect(true);
+        } else {
+            setIsValid(false);
+        }
     };
 
-  return (
-    <div>
-      <h2>{question}</h2>
-      <input
-        type="text"
-        value={userAnswer}
-        onChange={handleInputChange}
-        placeholder="Do you know the answer?"
-        style = {isValid ? defaultStyle:invalidStyle}
-        className={shake ? 'shake' : ''}
-      />
-      <button onClick={checkAnswer}>Prove it</button>
-    </div>
-  );
+    return (
+        <div>
+            {isAnswerCorrect ? (
+                <AudioPlayer audioSrc={audioSrc} />
+            ) : (
+                <>
+                    <h2>{question}</h2>
+                    <input
+                        type="text"
+                        value={userAnswer}
+                        onChange={handleInputChange}
+                        placeholder="Do you know the answer?"
+                        style={isValid ? defaultStyle : invalidStyle}
+                    />
+                    <button onClick={checkAnswer}>Prove it</button>
+                </>
+            )}
+        </div>
+    );
 }
 
 export default Riddle;
